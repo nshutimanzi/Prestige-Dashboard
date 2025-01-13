@@ -1,0 +1,36 @@
+.table{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    padding-top: 2rem;
+
+    Thead{
+        background-color: #fffccb;
+    }
+
+    Th {
+        padding: 0.8rem;
+        text-align: center;
+        border-bottom: 0.25px solid #b9b9b9;
+    }
+    
+    Td {
+        padding: 0.6rem;
+        text-align: center;
+        border-bottom: 0.25px solid #d3d2d2;
+    }
+
+    .sort-button{
+        width: 100%;
+        padding: 4px;
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    }
+    
+    .pagination{
+        display: flex;
+        justify-content: center;
+    }
+}
