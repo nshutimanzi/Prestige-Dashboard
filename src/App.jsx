@@ -10,7 +10,7 @@ function App() {
         <AppShell.Header>
           < Header />
         </AppShell.Header>
-        <AppShell.Main style={{ backgroundColor: '#ececec'}}>
+        <AppShell.Main style={{ backgroundColor: '#f8f9fa'}}>
           <Main />
         </AppShell.Main>
       </AppShell>

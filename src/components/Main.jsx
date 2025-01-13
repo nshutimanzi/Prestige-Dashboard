@@ -35,25 +35,42 @@ const Main = () => {
 
     return(
         <div className="mainContainer">
-            <Group className='inputButton'>
-                <TextInput
-                size="lg"
-                radius="md" 
-                placeholder="Enter phone number"
-                value={msidN}
-                onChange={(e) => setMsidn(e.target.value)}
-                error={error}/>
+            <div className='input-search-filter'>
+                <Group>
+                    <TextInput
+                    size="md"
+                    radius="md" 
+                    placeholder="Enter phone number"
+                    value={msidN}
+                    onChange={(e) => setMsidn(e.target.value)}
+                    error={error}
+                    styles={{
+                        root: {
+                            display: 'flex',
+                            alignItems: 'center',
+                            position: 'relative'
+                        },
+                        wrapper: {
+                            margin: 0
+                        },
+                        error: {
+                            position: 'absolute',
+                            bottom: '-20px'
+                        }
+                    }}
+                    />
 
-                <Button 
-                variant="filled" 
-                color="rgba(0, 0, 0, 1)" 
-                size="lg" 
-                radius="xl"
-                onClick={validateAndSearch}
-                rightSection={<IconSearch size={25} stroke={2}/>}
-                >
-                    Search
-                </Button>
+                    <Button 
+                    variant="filled" 
+                    color="rgba(0, 0, 0, 1)" 
+                    size="md" 
+                    radius="xl"
+                    onClick={validateAndSearch}
+                    rightSection={<IconSearch size={25} stroke={2}/>}
+                    >
+                        Search
+                    </Button>
+                </Group>
 
                 <Select 
                 placeholder='Filter by tier'
@@ -63,8 +80,9 @@ const Main = () => {
                     { value: '', label: 'All Tiers' },
                     ...tiers.map(tier => ({ value: tier, label: tier }))
                 ]}
+                size='md'
                 />
-            </Group>
+            </div>
 
             <SubscriberTable 
             data={subsData.subscribers}

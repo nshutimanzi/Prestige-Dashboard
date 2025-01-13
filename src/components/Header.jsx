@@ -13,8 +13,7 @@ const Header = () => {
                     <img 
                     src={Logo} 
                     alt="MtnLogo" 
-                    width="100px" 
-                    className="logo" />
+                    width="100px"/>
                 
                     <Text size='xl'className='dashboard-title'>Prestige Dashboard</Text>
                 </div>
