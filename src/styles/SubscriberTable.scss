@@ -6,7 +6,20 @@
     padding: 0.3rem;
     background-color: #fff;
     border: 0.5px solid #e0e0e0;
-    border-radius: 10px;
+    border-radius: 12px;
+
+    :global(.mantine-Table-table){
+        border-radius: 12px;
+    }
+    
+    Thead Tr:first-child{
+        Th:first-child{
+            border-top-left-radius: 10px;
+        }
+        Th:last-child{
+            border-top-right-radius: 10px;
+        }
+    }
 
     Thead{
         background-color: rgba(255, 203, 5, 0.4);
@@ -17,14 +30,6 @@
         padding-top: 0.8rem;
         text-align: left;
         border-bottom: 0.25px solid #b9b9b9;
-    }
-
-    .sort-button{
-        width: 100%;
-        padding: 4px;
-        &:hover{
-            background-color: rgba(0, 0, 0, 0.05);
-        }
     }
     
     .pagination{

@@ -10,7 +10,6 @@ const Main = () => {
     const [ searchedUser, setSearchedUser ] = useState(null);
     const [ isModalOpen, setIsModalOpen ] = useState(false);
     const [ filterTier, setFilterTier ] = useState('');
-    const [ sortConfig, setSortConfig ] = useState({ key: null, direction: 'asc' });
     const [ error, setError ] = useState('');
 
     const tiers = [...new Set(subsData.subscribers.map(sub => sub.tier))];
@@ -74,21 +73,20 @@ const Main = () => {
 
                 <Select 
                 placeholder='Filter by tier'
+                size='md'
+                radius='md'
                 value={filterTier}
                 onChange={setFilterTier}
                 data={[
                     { value: '', label: 'All Tiers' },
                     ...tiers.map(tier => ({ value: tier, label: tier }))
                 ]}
-                size='md'
                 />
             </div>
 
             <SubscriberTable 
             data={subsData.subscribers}
             filterTier={filterTier}
-            sortConfig={sortConfig}
-            setSortConfig={setSortConfig}
             />
             
             <Modal
@@ -98,13 +96,23 @@ const Main = () => {
             size="md"
             withCloseButton={true}
             centered
+            styles={{
+                title: {
+                    fontWeight: 500,
+                    fontSize: '1.5rem'
+                },
+                body: {
+                    padding: '1rem',
+                    fontSize: '1.1rem'
+                }
+            }}
             >
                 {searchedUser && (
                     <div>
-                        <Text><b>Phone Number:</b> {searchedUser.msidn}</Text>
-                        <Text> <b>Name:</b> {searchedUser.firstName} {searchedUser.lastName}</Text>
-                        <Text> <b>Tier:</b> {searchedUser.tier}</Text>
-                        <Text> <b>Points:</b> {searchedUser.points}</Text>
+                        <Text size='lg'><b>Phone Number:</b> {searchedUser.msidn}</Text>
+                        <Text size='lg'> <b>Name:</b> {searchedUser.firstName} {searchedUser.lastName}</Text>
+                        <Text size='lg'> <b>Tier:</b> {searchedUser.tier}</Text>
+                        <Text size='lg'> <b>Points:</b> {searchedUser.points}</Text>
                     </div>
                 )}
             </Modal>
