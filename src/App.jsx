@@ -5,7 +5,12 @@ import Main from './components/Main';
 
 function App() {
   return (
-    <MantineProvider withGlobalStyles withNormalizeCSS>
+    <MantineProvider 
+    withGlobalStyles 
+    withNormalizeCSS 
+    theme={{
+      fontFamily: 'Montserrat, sans-serif'
+    }}>
       <AppShell header={{ height: 60 }} padding="md" >
         <AppShell.Header>
           < Header />

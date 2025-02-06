@@ -7,10 +7,6 @@
     background-color: #fff;
     border: 0.5px solid #e0e0e0;
     border-radius: 12px;
-
-    :global(.mantine-Table-table){
-        border-radius: 12px;
-    }
     
     Thead Tr:first-child{
         Th:first-child{
@@ -23,17 +19,50 @@
 
     Thead{
         background-color: rgba(255, 203, 5, 0.4);
+
+        Th {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            font-weight: 600;
+        }
     }
 
-    Th, Td {
-        padding-left: 2rem;
-        padding-top: 0.8rem;
-        text-align: left;
-        border-bottom: 0.25px solid #b9b9b9;
+    Tbody {
+        Tr{
+            transition: background-color 0.2s;
+            
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.04);
+            }
+
+            Td {
+                padding: 1rem 2rem;
+                border-bottom: 1px solid #e0e0e0;
+            }
+        }
     }
-    
+
     .pagination{
         display: flex;
         justify-content: center;
+        padding: 1.5rem 0;
+
+        .mantine-Pagination-control {
+            color: black;
+            border-color: #ffcb05;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: rgba(255, 203, 5, 0.2);
+                border-color: #ffcb05;
+            }
+        }
+
+        .mantine-Pagination-control[data-active] {
+            background-color: black;
+            color: #ffcb05;
+            border-color: black;
+            font-weight: bold;
+        }
     }
 }

@@ -14,6 +14,13 @@
         justify-content: space-between;
         margin-top: 2rem;
         margin-bottom: 1.5rem;
+
+        .mantine-TextInput-input:focus,
+        .mantine-Select-input:focus {
+            border-color: #ffcb05;
+            box-shadow: 0 0 0 1px rgba(255, 203, 5, 0.4);
+            outline: none;
+        }
     }
 
 }
